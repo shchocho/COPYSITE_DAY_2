@@ -9,8 +9,6 @@ body{
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-
-
 #header{
   position: fixed;
   display: flex;
@@ -18,6 +16,7 @@ body{
   top: 0;
   z-index: 800;
   background: transparent;
+  transition: 1s;
 }
 
 #header.contents-hd{
@@ -27,76 +26,112 @@ body{
   top: 0;
   z-index: 800;
   background: white;
+  border-bottom: 1px solid #b5985a;
 }
+#header.contents-hd{
 
+}
 #header.contents-hd #top-logo a{
   background-size: contain;
-
   width: 140px;
-
   height: 60px;
   line-height: 80px;
   padding-top: 51px;
 
 }
-
 #header.contents-hd #gnb ul li a {
-
   font-size: 14px;
   font-weight: 500;
   line-height: 0.85;
   color: black;
+}
+#header.contents-hd .btn.login {
+  background: #aba79e;
 
 }
-
-
-
+#header.contents-hd #gnbbtn span{
+  background-color: #aba79e;
+}
 
 #header #top-logo{
   position: absolute;
   left: 30px;
 }
-
 #top-logo a{
   display: block;
   background-image: url(../img/logo.png);
   background-repeat: no-repeat;
   background-position: center;
-
   width: 170px;
-
   height: 80px;
   line-height: 80px;
   padding-top: 51px;
+  transition: 1s;
 
 }
 
 #header #gnb{
   margin: 0 auto;
 }
-
 #gnb ul {
-  overflow:  hidden;
-}
 
+}
 #gnb ul li{
   float : left;
 }
 
-#gnb ul li a {
-  text-align: center;
+#gnb > ul > li{
+  position: relative;
+}
 
+#gnb > ul > li > a {
+  text-align: center;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
   color: white;
-
   display: block;
-
-
+  transition: 1s;
   padding: 45px 51px 27px;
+}
+#gnb > ul > li > a:hover ~ .sub{
+  position: absolute;
+  display: inline-block;
+  background-color: #b5985a;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 1;
+  transition:1s;
+}
+#gnb ul li a ~ .sub{
+  display: none;
+  padding-left: 0;
+  opacity: 0;
 
 }
+#gnb ul li a:hover ~ .sub li{
+
+}
+#gnb ul li a ~ .sub li{
+  width: 100%;
+  text-align: center;
+}
+#gnb ul li a:hover ~ .sub li a{
+  line-height: 50px;
+  transition: 1s;
+
+}
+#gnb ul li a ~ .sub li a{
+  font-size: 15px;
+  line-height: 25px;
+  color: #e9e0d2;
+  font-weight: 400;
+  position: relative;
+  box-sizing: border-box;
+}
+#gnb ul li a ~ .sub li ul{
+    display: none;
+  }
 
 #header a.btn{
   position: absolute;
@@ -119,11 +154,9 @@ body{
 
 
 }
-
 #header a.btn span{
   padding: 0 3px;
 }
-
 
 #gnbbtn span {
   position: absolute;
@@ -135,16 +168,12 @@ body{
 
   transform: translateY(-50%);
 }
-
 #gnbbtn span:nth-child(1){
   top: 56px;
 }
-
 #gnbbtn span:nth-child(3){
   top: 72px;
 }
-
-
 
 section{
   display: flex;
@@ -159,26 +188,25 @@ section#intro .banner-wrap{
   height: 100vh;
   overflow: hidden;
 }
-
-
 section#intro .banner-wrap .banner-item{
   display: flex;
   justify-content: center;
   align-items: center;
-
+  position:absolute;
+  opacity: 1;
+  transition: 2s;
 }
-
-
+section#intro .banner-wrap .banner-item.opa{
+  opacity: 0;
+}
 section#intro .banner-wrap .banner-item img{
-
+ width: 100%;
 }
-
 section#intro .banner-wrap .banner-item .txt-box{
   position: absolute;
   color: white;
   text-align: center;
 }
-
 section#intro .banner-wrap .banner-item .txt-box p{
   font-size: 26px;
   font-weight: 500;
@@ -186,7 +214,6 @@ section#intro .banner-wrap .banner-item .txt-box p{
 
 
 }
-
 section#intro .banner-wrap .banner-item .txt-box h3{
   font-size: 55px;
   font-weight: 400;
@@ -204,6 +231,150 @@ section#intro .rotate{
   animation-iteration-count: infinite;
 }
 
+section#intro .img-dot{
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+
+  z-index: 300;
+  color: black;
+
+  bottom: 80px;
+  left: 150px;
+
+}
+section#intro .img-dot > .dot{
+  font-weight: 500;
+  color: gray;
+  width: 50px;
+  cursor: pointer
+}
+section#intro .img-dot > .dot.pick{
+  font-weight: 500;
+  color: white;
+  width: 50px;
+  cursor: pointer
+}
+
+section#intro .section-dot-wrap{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60px;
+  width: 20px;
+  top: 50%;
+  right: 100px;
+}
+
+section#intro .section-dot-wrap .section-dot{
+  content: '';
+  width: 5px;
+  height: 5px;
+  border: 0.1px solid #606060;
+  border-radius: 100%;
+  background: #f1f1f1;
+  cursor: pointer;
+
+}
+section#intro .section-dot-wrap .section-dot.pick{
+  border: 3px solid #b5985a;
+  border-radius: 100%;
+}
+
+section#intro .scroll-icon{
+  position: absolute;
+  bottom: 80px;
+  margin: 0 auto;
+  z-index: 500;
+  animation-name: popicon;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+section#section2{
+  position: relative;
+  margin: 70 auto;
+  background-image:url(../img/sec2/sec2_bg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+section#section2 .contents-wrap .txt-wrap{
+  position: absolute;
+  top: 35%;
+  left: -999px;
+}
+
+section#section2 .contents-wrap .txt-wrap.act{
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  transition: 3s;
+}
+
+section#section2 .contents-wrap .txt-wrap p{
+  font-size: 20px;
+  line-height: 1;
+  color: #b5985a;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+section#section2 .contents-wrap .txt-wrap p{
+  font-size: 20px;
+  line-height: 1;
+  color: #b5985a;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+section#section2 .contents-wrap .txt-wrap h4{
+  font-size: 46px;
+  line-height: 1.391;
+  color: #333;
+  letter-spacing: -0.05em;
+  font-weight: 300;
+  margin: 25px 0 63px;
+  margin-left: -3px;
+}
+section#section2 .contents-wrap .btn{
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 32%;
+  left: 15%;
+  width: 170px;
+  height: 46px;
+  border: 1px solid #b5985a;
+  border-radius: 30px;
+  opacity: 0;
+
+}
+section#section2 .contents-wrap .btn.actbt{
+  bottom: 37%;
+  transition: 1s;
+  opacity: 1;
+  background-color: #b5985a;
+}
+
+section#section2 .contents-wrap .btn a{
+  color: white;
+}
+
+section#section3{
+  background-color: #f9f9f9;
+
+  background-image: url(../img/sec3/sec3bg.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+}
+
 @keyframes rotateCir {
   from{
     transform: rotate(0);
@@ -211,6 +382,16 @@ section#intro .rotate{
 
   to{
     transform: rotate(360deg);
+  }
+
+}
+@keyframes popicon {
+  from{
+    transform: translateY(-30px);
+  }
+  to{
+   transform: translateY(-0px);
+
   }
 
 }
