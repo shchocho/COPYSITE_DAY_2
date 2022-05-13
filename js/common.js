@@ -1,9 +1,14 @@
 $(function() {
 
+
   let windowHeight = $(window).innerHeight();
   let direc = 0;
   let maxDirec = $("section").length - 1;
   let wheelAction = false;
+
+  if(direc == 0){
+    $(".sec1").addClass("pick");
+  }
 
   function wheelMove() {
     $("html").animate({
@@ -15,6 +20,8 @@ $(function() {
       },
       complete: function() {
         wheelAction: false;
+        $(".section-dot").removeClass("pick")
+        $(`.sec${direc + 1}`).addClass("pick")
       }
     })
     if (direc == 1) {
@@ -69,6 +76,7 @@ $(function() {
     $(".dot").removeClass("pick")
     $(this).addClass("pick")
   });
+
   $(".section-dot").each(function(i) {
     let thisIndex = i;
     $(this).click(function() {
