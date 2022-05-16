@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap');
 html{overflow: hidden;}
-html,body{margin: 0; padding: 0;}
+*{margin: 0; padding: 0;}
 ul,li,ol{list-style: none;}
 a{text-decoration: none; color: #666;}
 body{font-family: 'Noto Sans KR', sans-serif;}
@@ -127,24 +127,18 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 
 #header a.btn{
   position: absolute;
-  top: 51px;
+  top: 35px;
   right: 200px;
-
   width: 111px;
   height: 36px;
   line-height: 36px;
-
   display: inline-block;
-
   border: 1px solid #f1f1f1;
   border-radius: 10px;
   font-size: 13px;
-
   text-align: center;
   border-radius: 50px;
   color: white;
-
-
 }
 #header a.btn span{
   padding: 0 3px;
@@ -157,15 +151,117 @@ body{font-family: 'Noto Sans KR', sans-serif;}
   height: 1.6px;
   width: 32px;
   background: #fff;
-
   transform: translateY(-50%);
+  cursor: pointer;
 }
+
 #gnbbtn span:nth-child(1){
   top: 56px;
 }
 #gnbbtn span:nth-child(3){
   top: 72px;
 }
+
+#cont-nav {
+  display: none;
+  position: fixed;
+  top:0; bottom:0; left:0; right: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+#cont-nav.on{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+#cont-nav.on .cont-wrap{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cont-nav.on .cont-wrap h2{
+  font-size: 45px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+#cont-nav.on .cont-wrap .d-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+
+#cont-nav.on .cont-wrap .d-wrap dl{
+  text-align: center;
+  display: block;
+  width: 25%;
+  height: auto;
+}
+#cont-nav.on .cont-wrap .d-wrap dl dt{
+  margin-bottom: 15px;
+}
+#cont-nav.on .cont-wrap .d-wrap dl dd ul > li {
+  margin-bottom: 10px;
+}
+
+#cont-nav.on .cont-wrap .d-wrap dl dd a,#cont-nav.on .cont-wrap .d-wrap dl dt a{
+  color: white;
+  line-height: 30px;
+}
+
+#cont-nav.on .cont-wrap .d-wrap dl dt a{
+  font-size: 30px;
+  font-weight: 700;
+}
+#cont-nav.on .cont-wrap .d-wrap dl dd a{
+  font-size: 16px;
+}
+#cont-nav.on .close-wrap{
+  position: absolute;
+  top: 154px;
+  right: 100px;
+  display: inline-block;
+}
+
+#cont-nav.on .close-wrap #close-btn span {
+  position: absolute;
+  height: 1.6px;
+  width: 100px;
+  background: #fff;
+  transform: translateY(-50%) rotate(45deg);
+  cursor: pointer;
+}
+
+#cont-nav.on .close-wrap #close-btn span:nth-child(1){
+  transform: rotate(-45deg);
+}
+
+#cont-nav.on .close-wrap:hover #close-btn span{
+  transition: 0.5s;
+  transform: rotate(-45deg);
+}
+#cont-nav.on .close-wrap:hover #close-btn span:nth-child(1){
+  transition: 0.5s;
+  transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 section{
   display: flex;
@@ -676,7 +772,11 @@ section#section5 .box-container .box-item > div > p {
   }
   to{
    transform: translateY(-0px);
-
   }
+}
+
+@media screen and (max-width:1280px ) {
+
+
 
 }

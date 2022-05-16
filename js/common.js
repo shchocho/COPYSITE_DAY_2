@@ -88,5 +88,10 @@ $(function() {
     })
   });
 
+  $("#gnbbtn").click(function(){
+    $("#header").addClass("contents-hd");
+    $("#cont-nav").addClass("on");
+  })
+
 
 })
