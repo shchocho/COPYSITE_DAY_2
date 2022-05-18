@@ -93,5 +93,10 @@ $(function() {
     $("#cont-nav").addClass("on");
   })
 
+  $("#close-btn").click(function(){
+    $("#header").removeClass("contents-hd");
+    $("#cont-nav").removeClass("on");
+  })
+
 
 })

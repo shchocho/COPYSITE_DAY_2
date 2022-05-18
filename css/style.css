@@ -223,32 +223,43 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 }
 #cont-nav.on .close-wrap{
   position: absolute;
-  top: 154px;
-  right: 100px;
+  top: 104px;
+  right: 50px;
   display: inline-block;
 }
+
+#cont-nav.on .close-wrap #close-btn{
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  transition: 2s;
+  transform: rotate(0);
+
+}
+
+#cont-nav.on .close-wrap:hover #close-btn{
+  transform: rotate(360deg);
+}
+
 
 #cont-nav.on .close-wrap #close-btn span {
   position: absolute;
   height: 1.6px;
   width: 100px;
   background: #fff;
-  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
   cursor: pointer;
+  transform: rotate(45deg);
 }
 
 #cont-nav.on .close-wrap #close-btn span:nth-child(1){
-  transform: rotate(-45deg);
+  transform: rotate(135deg);
 }
 
-#cont-nav.on .close-wrap:hover #close-btn span{
-  transition: 0.5s;
-  transform: rotate(-45deg);
-}
-#cont-nav.on .close-wrap:hover #close-btn span:nth-child(1){
-  transition: 0.5s;
-  transform: rotate(45deg);
-}
+
+
+
 
 
 
