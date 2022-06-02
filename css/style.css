@@ -39,6 +39,28 @@ body{font-family: 'Noto Sans KR', sans-serif;}
   line-height: 0.85;
   color: black;
 }
+
+#header.contents-hd #gnb > ul > li:hover > a ~ .sub{
+  position: absolute;
+  display: inline-block;
+  background-color: #b5985a;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 1;
+  transition:1s;
+}
+
+#header.contents-hd #gnb > ul > li:hover > a ~ .sub{
+  position: absolute;
+  display: inline-block;
+  background-color: #b5985a;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 1;
+  transition:1s;
+}
+
+
 #header.contents-hd .btn.login {
   background: #aba79e;
 
@@ -49,7 +71,8 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 
 #header #top-logo{
   position: absolute;
-  left: 30px;
+  left: 110px;
+  top: -5px;
 }
 #top-logo a{
   display: block;
@@ -86,7 +109,16 @@ body{font-family: 'Noto Sans KR', sans-serif;}
   transition: 1s;
   padding: 45px 51px 27px;
 }
-#gnb > ul > li > a:hover ~ .sub{
+#gnb > ul > li:hover > a ~ .sub{
+  position: absolute;
+  display: inline-block;
+  background-color: #b5985a;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 1;
+  transition:1s;
+}
+#gnb > ul > li:hover > a ~ .sub{
   position: absolute;
   display: inline-block;
   background-color: #b5985a;
@@ -108,7 +140,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
   width: 100%;
   text-align: center;
 }
-#gnb ul li a:hover ~ .sub li a{
+#gnb ul li:hover a ~ .sub li a{
   line-height: 50px;
   transition: 1s;
 
@@ -146,8 +178,8 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 
 #gnbbtn span {
   position: absolute;
-  top: 64px;
-  right: 30px;
+  top: 54px;
+  right: 110px;
   height: 1.6px;
   width: 32px;
   background: #fff;
@@ -156,10 +188,10 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 }
 
 #gnbbtn span:nth-child(1){
-  top: 56px;
+  top: 46px;
 }
 #gnbbtn span:nth-child(3){
-  top: 72px;
+  top: 62px;
 }
 
 #cont-nav {
@@ -246,9 +278,10 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 #cont-nav.on .close-wrap #close-btn span {
   position: absolute;
   height: 1.6px;
-  width: 100px;
+  width: 50px;
   background: #fff;
   top: 50%;
+  left: 25%;
   cursor: pointer;
   transform: rotate(45deg);
 }
